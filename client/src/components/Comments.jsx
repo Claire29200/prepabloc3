@@ -5,9 +5,9 @@ import { MessageCircle, Edit, Trash2, Send, User, Check, X } from 'lucide-react'
 import API from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import './Comments.css';
+import { SERVER_URL } from '../config';
 
 const MAX_LENGTH = 5000;
-const SERVER_URL = 'http://localhost:5030';
 
 const errorMessage = (err) => err.response?.data?.message || 'Une erreur est survenue.';
 

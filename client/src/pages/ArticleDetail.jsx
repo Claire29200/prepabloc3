@@ -4,6 +4,7 @@ import API from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import { Edit, Trash2, Calendar, User } from 'lucide-react';
 import Comments from '../components/Comments';
+import { SERVER_URL } from '../config';
 
 const ArticleDetail = () => {
     const { id } = useParams();
@@ -47,7 +48,7 @@ const ArticleDetail = () => {
             <article>
                 {article.image && (
                     <img
-                        src={`http://localhost:5000${article.image}`}
+                        src={`${SERVER_URL}${article.image}`}
                         alt={article.title}
                         style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', marginBottom: '30px' }}
                     />
@@ -58,7 +59,7 @@ const ArticleDetail = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', padding: '20px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                         {article.avatar ? (
-                            <img src={`http://localhost:5000${article.avatar}`} alt={article.username} style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
+                            <img src={`${SERVER_URL}${article.avatar}`} alt={article.username} style={{ width: '40px', height: '40px', borderRadius: '50%' }} />
                         ) : <User />}
                         <div>
                             <Link to={`/profile/${article.user_id}`} style={{ fontWeight: 'bold' }}>{article.username}</Link>

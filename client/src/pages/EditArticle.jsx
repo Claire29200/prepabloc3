@@ -75,7 +75,7 @@ const EditArticle = () => {
                         {currentImage && (
                             <div style={{ marginBottom: '10px' }}>
                                 <p style={{ fontSize: '0.9rem', marginBottom: '5px' }}>Image actuelle :</p>
-                                <img src={`http://localhost:5000${currentImage}`} alt="preview" style={{ height: '100px', borderRadius: '8px' }} />
+                                <img src={`${SERVER_URL}${currentImage}`} alt="preview" style={{ height: '100px', borderRadius: '8px' }} />
                             </div>
                         )}
                         <label className="btn glass" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', width: 'fit-content' }}>
