@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import API from '../api/axios';
 import { Image as ImageIcon, Save } from 'lucide-react';
+import { SERVER_URL } from '../config';
 
 const EditArticle = () => {
     const { id } = useParams();
