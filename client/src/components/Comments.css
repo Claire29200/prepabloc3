@@ -1,0 +1,169 @@
+/* Espace commentaires : réutilise les variables et classes du thème existant
+   (var(--border), var(--text-muted), .btn, .glass) pour suivre le design de la page */
+
+.comments {
+    margin-top: 40px;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.comments-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.comments-error {
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+.comments-empty {
+    color: var(--text-muted);
+    margin: 10px 0 20px;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comment {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-username {
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.comment-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.comment-btn {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+.comment-btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.comment-content {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.comment-content p {
+    margin: 0 0 8px;
+}
+
+.comment-content blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 12px;
+    color: var(--text-muted);
+    margin: 8px 0;
+}
+
+.comment-content pre,
+.comment-content code {
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+
+.comment-content code {
+    padding: 2px 5px;
+}
+
+.comment-content pre {
+    padding: 12px;
+    overflow-x: auto;
+}
+
+.comment-content a {
+    text-decoration: underline;
+}
+
+.comment-form,
+.comment-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-form textarea,
+.comment-edit textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    resize: vertical;
+}
+
+.comment-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-form-footer small {
+    color: var(--text-muted);
+}
+
+.comment-form-footer .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}

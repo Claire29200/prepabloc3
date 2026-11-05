@@ -57,6 +57,19 @@ const initDB = async () => {
                     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 );
             `);
+            
+                        await pool.query(`
+                CREATE TABLE IF NOT EXISTS comments (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    content TEXT NOT NULL,
+                    article_id INT NOT NULL,
+                    user_id INT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+                    INDEX idx_comments_article (article_id, created_at)
+                );
+            `);
 
             // SEEDING LOGIC
             const [users] = await pool.query('SELECT * FROM users LIMIT 1');

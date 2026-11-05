@@ -36,7 +36,8 @@ exports.createArticle = async (req, res) => {
         const image = req.file ? `/uploads/${req.file.filename}` : null;
 
         const [result] = await pool.query(
-            `INSERT INTO articles (title, content, image, user_id) VALUES (${title}, ${content}, ${image}, ${req.userId})`,
+            'INSERT INTO articles (title, content, image, user_id) VALUES (?, ?, ?, ?)',
+            [title, content, image, req.userId]
         );
 
         res.status(201).json({ id: result.insertId, title, content, image });
